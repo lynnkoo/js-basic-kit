@@ -8,14 +8,14 @@ export function toArray<T>(value?: T | T[]): T[] {
 }
 
 export function toDate(value: Date | string | number): Date {
-  const param = toTruth(
+  const param = toSwitch(
     typeof value === 'string' && value.replace(/-/g, '/'),
     value,
   )
   return new Date(param)
 }
 
-export function toTruth(...exps: any[]): any {
+export function toSwitch(...exps: any[]): any {
   return exps.filter(Boolean)[0]
 }
 
