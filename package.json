@@ -1,6 +1,6 @@
 {
   "name": "js-basic-kit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "js-basic-kit",
   "main": "build/index.js",
   "scripts": {

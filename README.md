@@ -1,1 +1,1 @@
-## browser - basic - kit
+## js - basic - kit

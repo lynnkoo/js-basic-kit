@@ -1,5 +1,5 @@
 
-export function normalizeArray<T>(value?: T | T[]): T[] {
+export function toArray<T>(value?: T | T[]): T[] {
   const empty = [] as T[]
   if (!value) {
     return empty
@@ -7,6 +7,18 @@ export function normalizeArray<T>(value?: T | T[]): T[] {
   return empty.concat(value).filter(Boolean)
 }
 
-export function fullTypeOf(value: any) {
+export function toDate(value: Date | string | number): Date {
+  const param = toTruth(
+    typeof value === 'string' && value.replace(/-/g, '/'),
+    value,
+  )
+  return new Date(param)
+}
+
+export function toTruth(...exps: any[]): any {
+  return exps.filter(Boolean)[0]
+}
+
+export function typeOf(value: any): string {
     return Object.prototype.toString.call(value).slice(8, -1).toLocaleLowerCase()
 }
